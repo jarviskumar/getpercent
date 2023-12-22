@@ -1,79 +1,123 @@
 <!doctype html>
 <html lang="en">
-  <head>
-      <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <title>Percentage Calculator</title>
-    <style type="text/css" media="all">
-      h1{
-        color:rgb(118,1,74);
-      }
-      .mrk{
-        color: rgb(109,109,109
-        );
-        font-size:20px;
-        font-weight: bold;
-        
-      }
-    </style>
-  </head>
-  <body>
-    <div class="headText text-center ">
-    <span class="mrk">Mark Percentage</span>
-    <h1>Calculator</h1>
-    </div>
-<br />
-<form class="my-2">
-  <div class="row m-1" >
-    <div class="col">
-      <input type="number" id="obMark" class="form-control" placeholder="Obtained Marks">
-    </div>
-    <div class="col">
-      <input type="number" id="toMark" class="form-control" placeholder="Total Marks">
-    </div>
-  </div>
-</form>
-<div>
-  <button  type="button" class="btn btn-primary col-10 mx-4" id="btn">Get Percentage</button>
-</div>
-<div class="per container" style="font-size:5em;">
-  <span class=" mx-2" id="per">%</span>
-  <button type="button" class="btn btn-danger mx-2 my-5 float-right" onClick="window.location.reload()">Refresh</button>
-</div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Percentage Calculator</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">&copy; 2023-2024 All Rights Reserved <a href="https://jarviskumar.github.io/portfolio" target="_blank">Graphix D<a></a></p><br />
-    <p>Created by <i class="bi bi-heart-fill" style="color:red;"></i><b>Dipesh Pradhan</b> </p>
-    <ul class="list-inline">
-      <li class="list-inline-item"><a href="/privacy.html">Privacy</a></li>
-      <li class="list-inline-item"><a href="/terms.html">Terms</a></li>
-      <li class="list-inline-item"><a href="/contact.html">Support</a></li>
-    </ul>
-  </footer>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script type="text/javascript" charset="utf-8">
-      var obMark= document.getElementById('obMark')
+  <style>
+    /* .header{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); */
+    .header {
+      margin-top: 10vh;
+    }
+
+    .card-header {
+      font-size: 1.5rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+      background-color: rgb(1, 150, 125) !important;
+    }
+
+    span {
+      font-size: 4rem;
+    }
+
+    .card-footer {
+      text-align: center;
+      font-weight: bold;
+
+    }
+
+    .bi {
+      color: rgb(243, 61, 61) !important;
+    }
+
+    body {
+      /* background-color: rgb(18, 110, 109); */
+
+    }
+
+    .card {
+      width: 90vw;
+
+    }
+  </style>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
  
-      var toMark=document.getElementById('toMark')
-      let btn= document.getElementById('btn');
-      var per = document.getElementById('per');
-btn.onclick = function(){
-  let x =(obMark.value/toMark.value)*100;
-  x = parseInt(x);
-  per = per.innerHTML= x  + " %"
-  
-}
 
-      
-    </script>
-  </body>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+  <div class="header d-flex justify-content-center align-content-center">
+
+    <div class="card border-all">
+      <div class="card-header text-center text-white">
+        Mark Percentage Calculator
+      </div>
+      <div class="card-body  ">
+        <form class="form-inline d-flex justify-content-center flex-wrap " id="formid">
+          <div class="from-group  mr-2 ml-2 my-2">
+
+            <input type="number" id="obtainMark" class="form-control text-center " placeholder="Obtain Marks">
+          </div>
+          <div class="form-group   mr-2 ml-2 my-2">
+
+            <input type="number"  id="totalMark" class="form-control text-center " placeholder="Total Marks">
+
+          </div>
+        </form>
+        <br>
+        <div class="d-flex justify-content-center flex-wrap">
+          <button class="btn btn-primary ml-2 mr-2 pr-5 pl-5 my-2 " id="calcbtn">Calculate</button>
+
+          <button class="btn btn-danger ml-2 mr-2 my-2 " id="clear" onclick="window.location.reload()">Clear</button>
+        </div>
+      </div>
+      <br>
+      <div class="screen w-45 m-auto">
+        <span id="per">%</span>
+      </div>
+
+      <div class="card-footer text-body-secondary">
+        Created by <i class="bi bi-heart-fill"></i> Dipesh
+      </div>
+    </div>
+
+  </div>
+  <script>
+    var obtain = document.getElementById('obtainMark');
+    var total = document.getElementById('totalMark');
+  //  var btn = document.getElementById('calculate');
+    var perCent = document.getElementById('per')
+
+    calcbtn.onclick = function(){
+      let x = (obtain.value/total.value)*100;
+      x = parseInt(x);
+      per = per.innerHTML = x + "%"
+    };
+
+    // function newFunction(){
+    //   let ele = document.getElementById('formid');
+    //   ele.reset();
+    // }
+
+    
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
