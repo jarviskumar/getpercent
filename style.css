@@ -13,9 +13,13 @@
       background-color:#0766ad;
 
     }
-
-    span {
+ #per{
       font-size: 4rem;
       font-weight: 500;
       
     }
+    
+ .foot{
+   position: relative;
+   bottom: 5px;
+ }
